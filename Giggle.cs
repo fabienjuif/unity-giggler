@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Giggle
 {
@@ -22,6 +22,8 @@ public class Giggle
 
     public float GetNextValue(float currentValue)
     {
+        if (this.time <= 0) return currentValue;
+
         float total = this.time;
         float current = Time.time - this.startTime;
         float percent = current / total;
